@@ -28,34 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.webBrowser);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 364);
-            this.panel1.TabIndex = 0;
-            // 
-            // webBrowser
-            // 
-            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(585, 364);
-            this.webBrowser.TabIndex = 0;
-            this.webBrowser.Navigate("https://github.com/imwack/csharp");   //test branch
-
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(625, 28);
+            this.ExitButton.Location = new System.Drawing.Point(907, 22);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(65, 23);
             this.ExitButton.TabIndex = 1;
@@ -63,24 +42,32 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(1, -1);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(900, 560);
+            this.webBrowser.TabIndex = 0;
+            this.webBrowser.Navigate("https://github.com/imwack/csharp");
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 364);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(984, 562);
+            this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
